@@ -14,8 +14,8 @@ $.wait(500).then(function(){
 This is similar to [_.delay](http://underscorejs.org/#delay), except that you can cancel the *done* callbacks by calling `.reject()` on the returned Deferred object:
 
 ```JavaScript
-var deferred = $.wait(500).done(function(){
-  console.log('This won\'t run if the deferred object is rejected.');
+var deferred = $.wait(5000).done(function(){
+  console.log('This won\'t run if the deferred object is rejected within 5 seconds.');
 });
 
 if (confirm('Should we cancel the queued action?')) {
