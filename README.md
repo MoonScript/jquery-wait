@@ -11,7 +11,15 @@ $.wait(500).then(function(){
 });
 ```
 
-This is similar to [_.delay](http://underscorejs.org/#delay), except that you can cancel the *done* callbacks by calling `.reject()` on the returned Deferred object:
+Passing the *context* as the 2nd parameter:
+
+```JavaScript
+$.wait(500, someContext).then(function(){
+  this.something(); // "this" is the context parameter that you pass in
+});
+```
+
+This utility is similar to [_.delay](http://underscorejs.org/#delay), except that you can cancel the *done* callbacks by calling `.reject()` on the returned Deferred object:
 
 ```JavaScript
 var deferred = $.wait(5000);
